@@ -1,0 +1,12 @@
+.vscode/
+/00/
+/09/
+/13/
+/demo/
+/Sample/
+
+*.cmp
+*.out
+*.tst
+*.exe
+*.o

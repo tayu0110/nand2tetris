@@ -1,0 +1,83 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/Mux16.hdl
+
+/**
+ * 16-bit multiplexor: 
+ * for i = 0..15 out[i] = a[i] if sel == 0 
+ *                        b[i] if sel == 1
+ */
+
+CHIP Mux16 {
+    IN a[16], b[16], sel;
+    OUT out[16];
+
+    PARTS:
+    // Put your code here:
+    Not(in=sel, out=ns);
+    And(a=a[0], b=ns, out=A);
+    And(a=b[0], b=sel, out=v);
+    
+    And(a=a[1], b=ns, out=B);
+    And(a=b[1], b=sel, out=w);
+    
+    And(a=a[2], b=ns, out=C);
+    And(a=b[2], b=sel, out=c);
+    
+    And(a=a[3], b=ns, out=D);
+    And(a=b[3], b=sel, out=d);
+    
+    And(a=a[4], b=ns, out=E);
+    And(a=b[4], b=sel, out=e);
+    
+    And(a=a[5], b=ns, out=F);
+    And(a=b[5], b=sel, out=f);
+    
+    And(a=a[6], b=ns, out=G);
+    And(a=b[6], b=sel, out=g);
+    
+    And(a=a[7], b=ns, out=H);
+    And(a=b[7], b=sel, out=h);
+    
+    And(a=a[8], b=ns, out=I);
+    And(a=b[8], b=sel, out=i);
+    
+    And(a=a[9], b=ns, out=J);
+    And(a=b[9], b=sel, out=j);
+    
+    And(a=a[10], b=ns, out=K);
+    And(a=b[10], b=sel, out=k);
+    
+    And(a=a[11], b=ns, out=L);
+    And(a=b[11], b=sel, out=l);
+    
+    And(a=a[12], b=ns, out=M);
+    And(a=b[12], b=sel, out=m);
+    
+    And(a=a[13], b=ns, out=N);
+    And(a=b[13], b=sel, out=n);
+    
+    And(a=a[14], b=ns, out=O);
+    And(a=b[14], b=sel, out=o);
+    
+    And(a=a[15], b=ns, out=P);
+    And(a=b[15], b=sel, out=p);
+    
+    Or(a=A, b=v, out=out[0]);
+    Or(a=B, b=w, out=out[1]);
+    Or(a=C, b=c, out=out[2]);
+    Or(a=D, b=d, out=out[3]);
+    Or(a=E, b=e, out=out[4]);
+    Or(a=F, b=f, out=out[5]);
+    Or(a=G, b=g, out=out[6]);
+    Or(a=H, b=h, out=out[7]);
+    Or(a=I, b=i, out=out[8]);
+    Or(a=J, b=j, out=out[9]);
+    Or(a=K, b=k, out=out[10]);
+    Or(a=L, b=l, out=out[11]);
+    Or(a=M, b=m, out=out[12]);
+    Or(a=N, b=n, out=out[13]);
+    Or(a=O, b=o, out=out[14]);
+    Or(a=P, b=p, out=out[15]);
+}
